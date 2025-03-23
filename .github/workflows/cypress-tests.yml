@@ -34,7 +34,7 @@ jobs:
         run: npm run test:ci
 
       - name: Upload test reports
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         if: always()  # Upload reports even if tests fail
         with:
           name: cypress-reports
@@ -42,7 +42,7 @@ jobs:
           retention-days: 30
 
       - name: Upload screenshots of failed tests
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         if: failure()  # Only upload on test failure
         with:
           name: cypress-screenshots

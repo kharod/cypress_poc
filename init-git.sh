@@ -3,6 +3,9 @@
 # Initialize Git repository
 git init
 
+# Create and switch to main branch explicitly
+git checkout -b main
+
 # Add all files to Git
 git add .
 
@@ -11,7 +14,7 @@ git commit -m "Initial commit: MyLocalSearch Cypress automation project with Git
 
 # Instructions for setting up remote repository
 echo ""
-echo "Git repository initialized with initial commit."
+echo "Git repository initialized with initial commit on branch 'main'."
 echo ""
 echo "To connect to a remote repository, run the following command:"
 echo "  git remote add origin <your-repository-url>"

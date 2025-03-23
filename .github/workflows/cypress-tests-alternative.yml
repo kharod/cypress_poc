@@ -21,7 +21,7 @@ jobs:
           record: false # Set to true if you're using Cypress Dashboard
 
       - name: Upload test reports
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         if: always()
         with:
           name: cypress-reports
@@ -29,7 +29,7 @@ jobs:
           retention-days: 30
 
       - name: Upload screenshots of failed tests
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: cypress-screenshots

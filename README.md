@@ -181,7 +181,56 @@ Two different GitHub Actions workflow implementations are provided:
    - Handles environment setup automatically
    - Same artifact handling capabilities
 
-You can choose which implementation to use based on your specific needs.
+#### Why Two Different Workflows?
+
+Both workflows accomplish the same task but take different approaches to running Cypress tests:
+
+**When to use the Standard Implementation:**
+- When you need complete control over the environment setup
+- For complex projects with custom dependencies
+- If you need to execute custom commands before/after tests
+- If you want transparent visibility into each step of the process
+- When you have specific browser or system requirements
+
+**When to use the Cypress GitHub Action:**
+- For simpler projects where you just want to run tests
+- To reduce configuration complexity and potential errors
+- To benefit from optimizations made by the Cypress team
+- For faster execution (uses smart caching)
+- If you're new to GitHub Actions
+
+The Cypress GitHub Action is actually recommended for most projects due to its simplicity and maintenance by the Cypress team. The standard implementation is provided as an alternative for more complex scenarios or educational purposes.
+
+#### Troubleshooting Common Issues
+
+If you encounter issues with GitHub Actions:
+
+- Check which version of actions you're using (e.g. v2 vs v3 for upload-artifact)
+- For network or temporary GitHub issues, try running the workflow again
+- Verify GitHub repository permissions for Actions are correctly configured
+- Review workflow logs to identify specific failure points
+
+##### Common Git Errors
+
+**"src refspec main does not match any" error:**
+This occurs when trying to push to a branch that doesn't exist locally. The initialization script has been updated to explicitly create a 'main' branch. If you still encounter this:
+
+```bash
+# Check which branch you're on
+git branch
+
+# If you're on 'master', rename it to 'main'
+git branch -m master main
+
+# Then push
+git push -u origin main
+```
+
+Alternatively, you can push to whatever branch you're currently on:
+```bash
+# If you're on 'master'
+git push -u origin master
+```
 
 ### Viewing CI Results
 
