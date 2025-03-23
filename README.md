@@ -1,6 +1,6 @@
 # MyLocalSearch Automation with Cypress
 
-![Cypress Tests](https://github.com/[your-username]/cypress_poc/actions/workflows/cypress-tests.yml/badge.svg)
+![Cypress Tests](https://github.com/kharod/cypress_poc/actions/workflows/cypress-tests.yml/badge.svg)
 
 This project demonstrates an automation testing suite for a Search UI using Cypress following the Page Object Model (POM) pattern. It includes successful tests, intentionally failing tests, and generates comprehensive reports with screenshots.
 
@@ -141,20 +141,12 @@ In this project, we deliberately included a failing test (Test Case 2) that atte
 - Error handling with screenshots
 - Comprehensive reporting
 
-## Author
-
-[Your Name]
-
-## License
-
-ISC 
-
 ## Continuous Integration
 
 This project includes GitHub Actions configurations for continuous integration. The tests automatically run:
 
-- On every push to the `main` or `master` branch
-- On every pull request to the `main` or `master` branch
+- On every push to the `main` branch
+- On every pull request to the `main` branch
 - Manually through the GitHub Actions tab
 
 ### CI Pipeline Features
@@ -201,40 +193,14 @@ Both workflows accomplish the same task but take different approaches to running
 
 The Cypress GitHub Action is actually recommended for most projects due to its simplicity and maintenance by the Cypress team. The standard implementation is provided as an alternative for more complex scenarios or educational purposes.
 
-#### Troubleshooting Common Issues
-
-If you encounter issues with GitHub Actions:
-
-- Check which version of actions you're using (e.g. v2 vs v3 for upload-artifact)
-- For network or temporary GitHub issues, try running the workflow again
-- Verify GitHub repository permissions for Actions are correctly configured
-- Review workflow logs to identify specific failure points
-
-##### Common Git Errors
-
-**"src refspec main does not match any" error:**
-This occurs when trying to push to a branch that doesn't exist locally. The initialization script has been updated to explicitly create a 'main' branch. If you still encounter this:
-
-```bash
-# Check which branch you're on
-git branch
-
-# If you're on 'master', rename it to 'main'
-git branch -m master main
-
-# Then push
-git push -u origin main
-```
-
-Alternatively, you can push to whatever branch you're currently on:
-```bash
-# If you're on 'master'
-git push -u origin master
-```
-
 ### Viewing CI Results
 
 1. Go to the GitHub repository
 2. Click on the "Actions" tab
 3. Select the most recent workflow run
 4. Download the artifacts to view test reports and screenshots 
+
+
+## Author
+
+Gurpreet Kaur
