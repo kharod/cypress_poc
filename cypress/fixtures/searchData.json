@@ -1,0 +1,8 @@
+{
+  "successfulSearch": {
+    "query": "Cypress automation testing"
+  },
+  "failingSearch": {
+    "query": "Intentional failure test"
+  }
+} 
